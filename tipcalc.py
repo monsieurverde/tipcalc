@@ -1,15 +1,25 @@
-#prompt the user for meal subtotal
-subtotal = input("Meal subtotal: ")
-subtotal = float(subtotal)
+def tipcalc(subtotal,tip):   
+    # convert % value to decimal value
+    tip_pct = float(tip) * 0.01
 
-# prompt the user for tip %
-tip_pct = input("Tip %: ")
+    #calculate the tip amount
+    tip_amt = subtotal * tip_pct
 
-# convert % value to decimal value
-tip_pct = float(tip_pct) * 0.01
+    # print tip amount
+    return(tip_amt)
 
-#calculate the tip amount
-tip = subtotal * tip_pct
+def main():
+    #prompt the user for meal subtotal
+    subtotal = input("Meal subtotal: ")
+    subtotal = float(subtotal)
 
-# print tip amount
-print("Tip:",tip)
+    # prompt the user for tip %
+    tip_pct = input("Tip %: ")
+
+    tip = tipcalc(subtotal,tip_pct)
+
+    print(tip)
+
+
+if __name__ == '__main__':
+    main()
